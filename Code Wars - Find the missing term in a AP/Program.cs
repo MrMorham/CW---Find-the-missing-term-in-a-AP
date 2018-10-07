@@ -23,7 +23,7 @@ namespace Code_Wars___Find_the_missing_term_in_a_AP
     {
         static void Main (string[] args)
         {
-            //beginning
+            
         }
     }
 }
