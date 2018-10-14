@@ -23,7 +23,39 @@ namespace Code_Wars___Find_the_missing_term_in_a_AP
     {
         static void Main (string[] args)
         {
-            
+            List<int> test1 = new List<int> { 1, 3, 5, 9, 11 };
+            List<int> test2 = new List<int> { 0, 5, 10, 20, 25 };
+            List<int> test3 = new List<int> { 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 11 };
+
+            Console.WriteLine(FindMissing(test1));
+            Console.WriteLine(FindMissing(test2));
+            Console.WriteLine(FindMissing(test3));
+
+            Console.ReadLine();
+
+            int FindMissing(List<int> input)
+            {
+                int difference = input[1] - input[0];
+                int missing = -1;
+                int count = 0;
+
+                foreach(int element in input)
+                {
+                    if(element + difference == input[count + 1])
+                    {
+                        count++;
+                    }
+                    else
+                    {
+                        missing = element + difference;
+                        count = 0;
+                        break;
+                    }
+                }
+
+                return missing;
+            }
+
         }
     }
 }
